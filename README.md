@@ -1,5 +1,7 @@
 # EIKF-VIO-LIO
 
+(Currently, only the necessary steps for using the code are observable. Full open access will be enabled after the review.)
+
 ## Prerequisites
 
 1. Livox_ros_driver
