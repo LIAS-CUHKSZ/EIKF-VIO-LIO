@@ -1,5 +1,4 @@
 # EIKF-VIO-LIO
-# Usage
 
 ## Prerequisites
 
@@ -28,23 +27,42 @@
 
 ## Run on datasets
 
-1. Run on public datasets
+We have tested the following datasets, which config file can be directly used. We only support the dataset type: rosbag containing lidar, IMU and camera measurements.
 
-   We have tested the following datasets, which config file can be directly used. We only support the dataset type: rosbag containing lidar, IMU and camera measurements.
+| Datasets        | Dataset link                                            | Launch file       | data preprocess | evaluation script                                            |
+| --------------- | ------------------------------------------------------- | ----------------- | --------------- | ------------------------------------------------------------ |
+| URCA            | https://advdataset2019.wixsite.com/urbanloco/california | URCA.launch       |                 | UR_evaluation.sh                                             |
+| URHK            | https://advdataset2019.wixsite.com/urbanloco/hong-kong  | urbanloco.launch  |                 | UR_evaluation.sh                                             |
+| NTU Viral       | https://ntu-aris.github.io/ntu_viral_dataset/           | NTU_VIRAL.launch  |                 | https://ntu-aris.github.io/ntu_viral_dataset/evaluation_tutorial.html |
+| NTU MCD         | https://mcdviral.github.io/                             | NTU_Viral2.launch |                 | evaluate_ntu2.sh                                             |
+| private dataset | Our hand-held device                                    | ilive_mid.launch  |                 | lab_evaluation.sh                                            |
+|                 |                                                         |                   |                 |                                                              |
 
-   | Datasets        | Dataset link                                            | Launch file | config file | data preprocess | evaluation script |
-   | --------------- | ------------------------------------------------------- | ----------- | ----------- | --------------- | ----------------- |
-   | UrCA            | https://advdataset2019.wixsite.com/urbanloco/california |             |             |                 |                   |
-   | UrHK            | https://advdataset2019.wixsite.com/urbanloco/hong-kong  |             |             |                 |                   |
-   | newer college   | https://ori-drs.github.io/newer-college-dataset/        |             |             |                 |                   |
-   | NTU Viral       | https://ntu-aris.github.io/ntu_viral_dataset/           |             |             |                 |                   |
-   | NTU MCD         | https://mcdviral.github.io/                             |             |             |                 |                   |
-   | private dataset | Our hand-held device                                    |             |             |                 |                   |
-   |                 |                                                         |             |             |                 |                   |
 
-   
 
-   1.1 Download datasets and remember its path <BagPath>and the name of rosbag <BagName>.
+1.1 Download datasets and remember its path <Your BagPath>and the name of rosbag <Your BagName>. 
 
-   1.2 Modify the corresponding launch file.
+1.2 Modify the corresponding launch file.
+
+```
+<!-- what ros bag to play -->
+<arg name="dataset"   default="<Your BagName>" /> 
+<arg name="bag_path"   default="<Your BagPath>" />  
+<!-- where to save the recorded poses -->
+<arg name="path_save"   default="<Your SavePath>" /> 
+
+```
+
+1.3 Run the code
+
+```
+source devel/setup.bash
+roslaunch ilive <Your launch file>
+```
+
+
+
+## Evaluation
+
+If you want to get evaluation result, please run the corresponding evaluation script.
 
