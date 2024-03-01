@@ -2,6 +2,31 @@
 
 (Currently, only the necessary steps for using the code are observable. Full open access will be enabled after the review.)
 
+<!-- TABLE OF CONTENTS -->
+<details open="open" style='padding: 10px; border-radius:5px 30px 30px 5px; border-style: solid; border-width: 1px;'>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#prerequisites">Prerequisites</a>
+    </li>
+    <li>
+      <a href="#installation">Installation</a>
+    </li>
+    <li>
+      <a href="#run">Run on datasets</a>
+    </li>
+    <li>
+      <a href="#evaluation">Evaluation</a>
+    </li>
+    <li>
+      <a href="#acknowledgement">Acknowledgement</a>
+    </li>
+    <li>
+      <a href="#citation">Citation</a>
+    </li>
+  </ol>
+</details>
+
 ## Prerequisites
 
 1. Livox_ros_driver
@@ -27,7 +52,7 @@
 
    
 
-## Run on datasets
+## Run
 
 We have tested the following datasets, which config file can be directly used. We only support the dataset type: rosbag containing lidar, IMU and camera measurements.
 
@@ -70,10 +95,24 @@ If you want to get evaluation result, please run the corresponding evaluation sc
 
 ## Acknowledgement
 We thank the authors of the following repositories for their open-source code:
+
 OpenVINS:
 https://docs.openvins.com/
+
 Fast-LIO:
 https://github.com/hku-mars/FAST_LIO
+
 R3live:
 https://github.com/hku-mars/r3live
 ## Citation
+
+```
+@misc{li2024efficient,
+      title={Efficient Invariant Kalman Filter for Inertial-based Odometry with Large-sample Environmental Measurements}, 
+      author={Xinghan Li and Haoying Li and Guangyang Zeng and Qingcheng Zeng and Xiaoqiang Ren and Chao Yang and Junfeng Wu},
+      year={2024},
+      eprint={2402.05003},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
