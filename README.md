@@ -3,6 +3,7 @@
 (Currently, only the necessary steps for using the code are observable. Full open access will be enabled after the review.)
 
 <!-- TABLE OF CONTENTS -->
+
 <details open="open" style='padding: 10px; border-radius:5px 30px 30px 5px; border-style: solid; border-width: 1px;'>
   <summary>Table of Contents</summary>
   <ol>
@@ -26,6 +27,7 @@
     </li>
   </ol>
 </details>
+
 
 ## Prerequisites
 
@@ -52,20 +54,24 @@
 
    
 
+
+
 ## Run
 
 We have tested the following datasets, which config file can be directly used. We only support the dataset type: rosbag containing lidar, IMU and camera measurements.
 
-| Datasets        | Dataset link                                            | Launch file       | data preprocess | evaluation script                                            |
-| --------------- | ------------------------------------------------------- | ----------------- | --------------- | ------------------------------------------------------------ |
-| URCA            | https://advdataset2019.wixsite.com/urbanloco/california | URCA.launch       |                 | UR_evaluation.sh                                             |
-| URHK            | https://advdataset2019.wixsite.com/urbanloco/hong-kong  | urbanloco.launch  |                 | UR_evaluation.sh                                             |
-| NTU Viral       | https://ntu-aris.github.io/ntu_viral_dataset/           | NTU_VIRAL.launch  |                 | https://ntu-aris.github.io/ntu_viral_dataset/evaluation_tutorial.html |
-| NTU MCD         | https://mcdviral.github.io/                             | NTU_Viral2.launch |                 | evaluate_ntu2.sh                                             |
-| private dataset | Our hand-held device                                    | ilive_mid.launch  |                 | lab_evaluation.sh                                            |
-|                 |                                                         |                   |                 |                                                              |
+| Datasets        | Dataset link                                            | Launch file       | data preprocess                                              | evaluation method                                            | evaluation script                                            |
+| --------------- | ------------------------------------------------------- | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| URCA            | https://advdataset2019.wixsite.com/urbanloco/california | URCA.launch       | Rosbag with all sensors is provided, you can directly use.   | evo                                                          | UR_evaluation.sh                                             |
+| URHK            | https://advdataset2019.wixsite.com/urbanloco/hong-kong  | urbanloco.launch  | Rosbag with all sensors is provided, you can directly use.   | evo                                                          | UR_evaluation.sh                                             |
+| NTU Viral       | https://ntu-aris.github.io/ntu_viral_dataset/           | NTU_VIRAL.launch  | Rosbag with all sensors is provided, you can directly use.   | https://ntu-aris.github.io/ntu_viral_dataset/evaluation_tutorial.html | https://ntu-aris.github.io/ntu_viral_dataset/evaluation_tutorial.html |
+| NTU MCD         | https://mcdviral.github.io/                             | NTU_Viral2.launch | Need to merge rosbag with different topics. You can refer to : https://github.com/LIAS-CUHKSZ/DataProcessTools4SLAM/blob/main/merge_rosbag.py | evo                                                          | evaluate_ntu2.sh                                             |
+| private dataset | Our hand-held device                                    | ilive_mid.launch  | Rosbag with all sensors is provided, you can directly use.   | evo                                                          | lab_evaluation.sh                                            |
+|                 |                                                         |                   |                                                              |                                                              |                                                              |
 
-
+* You can run the evaluation script directly. Evo is already included in the script.
+* evo: https://michaelgrupp.github.io/evo/doc/performance.html
+* Evaluation metric we used in evo:  root-mean-square-error (rmse) of absolute pose error (ape) with translation part (evo_ape), with unit (m). 
 
 1.1 Download datasets and remember its path <Your BagPath>and the name of rosbag <Your BagName>. 
 
@@ -94,6 +100,7 @@ If you want to get evaluation result, please run the corresponding evaluation sc
 
 
 ## Acknowledgement
+
 We thank the authors of the following repositories for their open-source code:
 
 OpenVINS:
@@ -104,6 +111,7 @@ https://github.com/hku-mars/FAST_LIO
 
 R3live:
 https://github.com/hku-mars/r3live
+
 ## Citation
 
 ```
