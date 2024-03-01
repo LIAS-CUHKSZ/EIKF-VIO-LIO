@@ -69,6 +69,11 @@ If you want to get evaluation result, please run the corresponding evaluation sc
 
 
 ## Acknowledgement
-
-
+We thank the authors of the following repositories for their open-source code:
+OpenVINS:
+https://docs.openvins.com/
+Fast-LIO:
+https://github.com/hku-mars/FAST_LIO
+R3live:
+https://github.com/hku-mars/r3live
 ## Citation
